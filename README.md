@@ -1,4 +1,5 @@
-![Screenshot][Final Project 2/homepic.png]
+![image](https://github.com/nilgravealis/mckacksnew/assets/123846159/6ce40ed5-df13-4d47-9f0a-2fac6d72b65e)
+
 # SUS: Symptom Understanding System
 ## Inspiration
 We identified the problem of communication barriers between doctors and patients in healthcare. We decided to do our part to worsen the problem, and provide some short-term amusement for long-term misery.
