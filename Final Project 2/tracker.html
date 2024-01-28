@@ -23,6 +23,23 @@
 		background-color: #92C7CF;
 	}
 
+	.button {
+		background-color: #92C7CF;
+		border: none;
+		color: #004060;
+		padding: 15px 32px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	
+	.button:hover {
+		background-color: #AAD7D9;
+		color: #004060;
+	}
 
 	</style>
 <body>
@@ -46,13 +63,13 @@
 
 <div id="result">
 	<center>
-	Why haven't you been tracking your data? This is why you're so unhealthy. You just don't care.
-</center>
+	<h1>Why haven't you been tracking your data? This is why you're so unhealthy. You just don't care.</h1>
+	</center>
 </div>
 
-<nav id="navToTreatments">
+<nav id="navToTreatments">	
 	<center>
-	<a class="active" href="treatments.html">Treat yourself, if you really think it's that important.</a>
+	<h1><a class="active" href="treatments.html">Treat yourself, if you really think it's that important.</a></h1>
 </center>
 </nav>
 
@@ -69,17 +86,16 @@
 		<input type="checkbox" id="symptom3" name="symptom3" value="Happiness">
 		<label for="symptom3"> I felt happy today, and used my time to the fullest.</label><br>
 		<input type="checkbox" id="symptom4" name="symptom4" value="Toenails">
-		<label for="symptom4"> My toenails are abnormal today. </label>
+		<label for="symptom4"> My toenails are abnormal today. </label><br>
 		<input type="checkbox" id="symptom5" name="symptom5" value="Fingers">
-		<label for="symptom5"> My fingers are incapable of writing useful code today. </label>
+		<label for="symptom5"> My fingers are incapable of writing useful code today. </label><br>
 		<input type="checkbox" id="symptom6" name="symptom6" value="Delusion">
-		<label for="symptom6"> I am delusional today.</label>
-		<br>
+		<label for="symptom6"> I am delusional today.</label><br>
 	</center>
 </form>
 <div>
 <center>
-	<button id="sussify" onclick="store()" type="button">Sussify My Symptoms!</button>
+	<button class="button" id="sussify" onclick="store()" type="button">Sussify My Symptoms!</button><br><br>
 </center>
 </div>
 <div>
