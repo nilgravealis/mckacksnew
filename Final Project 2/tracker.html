@@ -179,24 +179,20 @@
 		 }
 
 		 //save the table
-		 if (typeof(Storage) !== "undefined") {
-			if (sessionStorage.rowsCount) {
-			sessionStorage.rowsCount = Number(sessionStorage.rowsCount)+1;
-			} 
-			else {
-			sessionStorage.rowsCount = 1;
-			}
-			if (sessionStorage.rowsCount > 10){
-				document.getElementById("result").innerHTML = "You have logged symptoms " + sessionStorage.rowsCount + " times. That's WAY too much. Our medical team is busy with people who have it worse than you. You should be ashamed.";
-				document.getElementById("sussify").style.visibility = 'hidden';
-				document.getElementById("navToTreatments").style.visibility = 'visible';
-			}
+		if (sessionStorage.rowsCount) {
+		sessionStorage.rowsCount = Number(sessionStorage.rowsCount)+1;
+		} 
+		else {
+		sessionStorage.rowsCount = 1;
+		}
+		if (sessionStorage.rowsCount > 10){
+			document.getElementById("result").innerHTML = "You have logged symptoms " + sessionStorage.rowsCount + " times. That's WAY too much. Our medical team is busy with people who have it worse than you. You should be ashamed.";
+			document.getElementById("sussify").style.visibility = 'hidden';
+			document.getElementById("navToTreatments").style.visibility = 'visible';
+		}
 			
-		 } 
-		 else {
-			document.getElementById("result").innerHTML = "No web storage. Why is your computer bad?";
-  		}
 		 
+		
 	}
 </script>
 </font>
