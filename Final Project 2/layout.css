@@ -61,8 +61,11 @@ li a:hover {
 } */
 
 table {
-  padding:10px;
+  border-collapse: 1px solid #92C7CF;
+  width: 100%;
+  padding: 10px;
 }
+
 
 input[type=text] {
   width: 100%;
