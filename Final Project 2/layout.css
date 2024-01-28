@@ -1,4 +1,4 @@
-a:visited {color:grey; background-color:transparent; text-decoration:none}
+a:visited {color:#E5E1DA; background-color:transparent; text-decoration:none}
 
 header {
 	height: 300;
@@ -8,7 +8,7 @@ header {
 }
 
 body {
-	background-color: #e6edf2;
+	background-color: #FBF9F1;
 }
 
 h1 {
@@ -35,7 +35,7 @@ li {
 
 li a {
   display: block;
-  color: #004b7e;
+  color: #92C7CF;
   text-align: center;
   padding: 16px 40px;
   text-decoration: none;
@@ -43,21 +43,21 @@ li a {
 }
 
 li a:hover {
-  background-color: #fac800;
-  color: white;
+  background-color: #AAD7D9;
+  color: #004060;
 }
 
 .active {
-  background-color: #faaf00;
-  color: white;
+  background-color: #92C7CF;
+  color: #004060;
 }
 
-section {
+/* section {
   color:#004b7e;
   padding:10px;
   text-align: left;
   text-align: justify;
-}
+} */
 
 table {
   padding:10px;
@@ -81,8 +81,8 @@ input[type=text], select {
 
 input[type=submit] {
   width: 50%;
-  background-color: #faaf00;
-  color: white;
+  background-color: #92C7CF;
+  color: #004060;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -91,7 +91,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #fac800;
+  background-color: #AAD7D9;
 }
 
 footer {
