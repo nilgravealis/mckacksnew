@@ -52,6 +52,12 @@
 		<label for="symptom2"> My hair follicles hurt today.</label><br>
 		<input type="checkbox" id="symptom3" name="symptom3" value="Happiness">
 		<label for="symptom3"> I felt happy today, and used my time to the fullest.</label><br>
+		<input type="checkbox" id="symptom4" name="symptom4" value="Toenails">
+		<label for="symptom4"> My toenails are abnormal today. </label>
+		<input type="checkbox" id="symptom5" name="symptom5" value="Fingers">
+		<label for="symptom5"> My fingers are incapable of writing useful code today. </label>
+		<input type="checkbox" id="symptom6" name="symptom6" value="Delusion">
+		<label for="symptom6"> I am delusional today.</label>
 		<br>
 	</center>
 </form>
@@ -68,6 +74,9 @@
 		<th>Midness Experienced</th>
 		<th>Hair Follicles Hurting</th>
 		<th>Happiness and Contentment</th>
+		<th>Toenails Hurting</th>
+		<th>Useless Code</th>
+		<th>Delusions of Grandeur</th>
 	</tr>
 </table>
 </center>
@@ -84,6 +93,9 @@
 	const symptom1 = document.getElementById("symptom1");
 	const symptom2 = document.getElementById("symptom2");
 	const symptom3 = document.getElementById("symptom3");
+	const symptom4 = document.getElementById("symptom4");
+	const symptom5 = document.getElementById("symptom5");
+	const symptom6 = document.getElementById("symptom6");
 
 	symptom3.addEventListener("change", () => {
 		if (symptom3.checked){
@@ -101,6 +113,9 @@
 		 var s1 = row.insertCell(1);
 		 var s2 = row.insertCell(2);
 		 var s3 = row.insertCell(3);
+		 var s4 = row.insertCell(4);
+		 var s5 = row.insertCell(5);
+		 var s6 = row.insertCell(6);
 
 		 //add the appropriate values to the cell
 		 var date = new Date();
@@ -108,6 +123,9 @@
 		 s1.innerHTML = Boolean(symptom1.checked);
 		 s2.innerHTML = Boolean(symptom2.checked);
 		 s3.innerHTML = Boolean(symptom3.checked);
+		 s4.innerHTML = Boolean(symptom4.checked);
+		 s5.innerHTML = Boolean(symptom5.checked);
+		 s6.innerHTML = Boolean(symptom6.checked);
 
 		 //save the table
 		 if (typeof(Storage) !== "undefined") {
