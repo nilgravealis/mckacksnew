@@ -127,13 +127,13 @@ input[type=submit]:hover {
   background-color: #AAD7D9;
 }
 
-/* footer {
-    background-color:#5b7da1;
+footer {
+    background-color:#78a0a6;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;	
-} */
+}
 
 .dropdown {
     position: relative;
