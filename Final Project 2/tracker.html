@@ -3,6 +3,22 @@
 	<link rel="stylesheet" type="text/css" href="layout.css">
 	<title>TRACKER</title>
 </head>
+<style>
+	table {
+	  border-collapse: collapse;
+	  width: 100%;
+	}
+	
+	td, th {
+	  border: 1px solid #92C7CF;
+	  text-align: left;
+	  padding: 8px;
+	}
+	
+	tr:nth-child(even) {
+	  background-color: #92C7CF;
+	}
+	</style>
 <body>
 	<font face="seravek">
 
@@ -22,6 +38,12 @@
 	</center>
 </nav>
 
+<div id="result">
+	<center>
+	Why haven't you been tracking your data? This is why you're so unhealthy.
+</center>
+</div>
+
 <form id="myform">
 	<center>
 		<input type="checkbox" id="symptom1" name="symptom1" value="Mid">
@@ -33,23 +55,36 @@
 		<br>
 	</center>
 </form>
+<div>
 <center>
-	<button onclick="store()" type="button">Systematically Understand Symptoms</button>
+	<button id="sussify" onclick="store()" type="button">Sussify My Symptoms!</button>
 </center>
+</div>
+<div>
 <center>
 <table id="myTable">
 	<tr>
 		<th>Date</th>
-		<th>Symptom1</th>
-		<th>Symptom2</th>
-		<th>Symptom3</th>
+		<th>Midness Experienced</th>
+		<th>Hair Follicles Hurting</th>
+		<th>Happiness and Contentment</th>
 	</tr>
 </table>
 </center>
+</div>
+
+
+
+
 <script id="formSubmission">
 
+	localStorage.clear();
+
 	// this part of the script stops the user from being able to be happy
+	const symptom1 = document.getElementById("symptom1");
+	const symptom2 = document.getElementById("symptom2");
 	const symptom3 = document.getElementById("symptom3");
+
 	symptom3.addEventListener("change", () => {
 		if (symptom3.checked){
 			alert("Our medical team cannot help you if you are unwilling to help yourself. Please answer honestly.");
@@ -66,53 +101,34 @@
 		 var s1 = row.insertCell(1);
 		 var s2 = row.insertCell(2);
 		 var s3 = row.insertCell(3);
+
 		 //add the appropriate values to the cell
 		 var date = new Date();
-		 dayCell.innerHTML = date.getDay() + date.getMonth() + date.getFullYear();
+		 dayCell.innerHTML = date;
+		 s1.innerHTML = Boolean(symptom1.checked);
+		 s2.innerHTML = Boolean(symptom2.checked);
+		 s3.innerHTML = Boolean(symptom3.checked);
+
 		 //save the table
-		 
+		 if (typeof(Storage) !== "undefined") {
+			if (localStorage.rowsCount) {
+			localStorage.rowsCount = Number(localStorage.rowsCount)+1;
+			} 
+			else {
+			localStorage.rowsCount = 1;
+			}
+			if (localStorage.rowsCount > 10){
+				document.getElementById("result").innerHTML = "You have logged symptoms " + localStorage.rowsCount + " times. That's WAY too much. Our medical team is busy with people who have it worse than you. You should be ashamed.";
+				document.getElementById("sussify").style.visibility = 'hidden';
+			}
+			
+		 } 
+		 else {
+			document.getElementById("result").innerHTML = "No web storage. Why is your computer bad?";
+  		}
 		 
 	}
-
-	var symptoms = [];
-/*
-	function createTable(tableData) {
-		var table = document.createElement('table');
-		var tableBody = document.createElement('tbody');
-
-		tableData.forEach(function(rowData) {
-			var row = document.createElement('tr');
-
-			rowData.forEach(function(cellData) {
-				var cell = document.createElement('td');
-				cell.appendChild(document.createTextNode(cellData));
-				row.appendChild(cell);
-			});
-
-			tableBody.appendChild(row);
-		})
-
-		table.appendChild(tableBody);
-		document.body.appendChild(table);
-	}
-
-
-
-	const submitted = document.getElementById("submit");
-	submitted.addEventListener("change", () => {
-		const d = new Date();
-		const date = d.getMinutes();
-
-		let length = symptoms.push([])
-		symptoms[length].push(date);
-		var symptoms_checked = document.getElementByID("myform").elements;
-		for (var i=0; element; element = elements[i++]){
-			symptoms[length].push(element.checked);
-		}
-		createTable([["row 1, cell 1", "row 1, cell 2"], ["row 2, cell 1", "row 2, cell 2"]]);
-	})*/
 </script>
-
 </font>
 </body>
 </html>
