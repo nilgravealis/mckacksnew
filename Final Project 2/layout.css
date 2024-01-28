@@ -1,4 +1,4 @@
-a:visited {color:#E5E1DA; background-color:transparent; text-decoration:none}
+/* a:visited {color:#E5E1DA; background-color:transparent; text-decoration:none} */
 
 header {
 	height: 300;
@@ -35,7 +35,7 @@ li {
 
 li a {
   display: block;
-  color: #92C7CF;
+  color: #004060;
   text-align: center;
   padding: 16px 40px;
   text-decoration: none;
@@ -94,13 +94,13 @@ input[type=submit]:hover {
   background-color: #AAD7D9;
 }
 
-footer {
+/* footer {
     background-color:#5b7da1;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;	
-}
+} */
 
 .dropdown {
     position: relative;
