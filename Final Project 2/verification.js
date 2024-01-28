@@ -148,7 +148,7 @@ function checkForAnswer() {
     //checking if checked radio button is same as answer
     options.forEach((option) => {
         if (option.checked === true && option.value === currentQuestionAnswer) {
-            document.getElementById(correctOption).style.backgroundColor = "green"
+            document.getElementById(correctOption).style.backgroundColor = '#92C7CF'
             playerScore++
             indexNumber++
             //set to delay question number till when next question loads
@@ -159,8 +159,8 @@ function checkForAnswer() {
 
         else if (option.checked && option.value !== currentQuestionAnswer) {
             const wrongLabelId = option.labels[0].id
-            document.getElementById(wrongLabelId).style.backgroundColor = "red"
-            document.getElementById(correctOption).style.backgroundColor = "green"
+            document.getElementById(wrongLabelId).style.backgroundColor = '#FBF9F1'
+            document.getElementById(correctOption).style.backgroundColor = '#92C7CF'
             wrongAttempt++
             indexNumber++
             //set to delay question number till when next question loads
@@ -230,7 +230,7 @@ function handleEndGame() {
     const playerGrade = (playerScore / 3) * 100;
     //data to display to score board
     document.getElementById("remarks").innerHTML = remark;
-    document.getElementById('remarks').style.color = 'green'; 
+    document.getElementById('remarks').style.color = '#92C7CF'; 
     document.getElementById('grade-percentage').innerHTML = playerGrade;
     document.getElementById('wrong-answers').innerHTML = wrongAttempt;
     document.getElementById('right-answers').innerHTML = playerScore;
