@@ -39,16 +39,10 @@
 <center>
 <table id="myTable">
 	<tr>
-		<tr>Date</th>
+		<th>Date</th>
 		<th>Symptom1</th>
 		<th>Symptom2</th>
 		<th>Symptom3</th>
-	</tr>
-	<tr>
-		<td>Today</td>
-		<td>Yes</td>
-		<td>No</td>
-		<td>No</td>
 	</tr>
 </table>
 </center>
@@ -74,7 +68,7 @@
 		 var s3 = row.insertCell(3);
 		 //add the appropriate values to the cell
 		 var date = new Date();
-		 dayCell.innerHTML = date.getFullYear();
+		 dayCell.innerHTML = date.getDay() + date.getMonth() + date.getFullYear();
 		 //save the table
 		 
 		 
