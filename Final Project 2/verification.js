@@ -173,20 +173,22 @@ function unCheckRadioButtons() {
 function handleEndGame() {
     
     let remark = null
+    document.getElementById('whylink').style.visibility = 'hidden';
     //let remarkColor = "bad";
 
     // condition check for player remark and remark color
     //debugging: player score cases are working and remark assignment is working
     if (playerScore <= 1) {
-        remark = "Bad Grades, Keep Practicing."
+        remark = "Make sure to mark that you're delusional today! You cannot contact us yet."
         //remarkColor = "red"
     }
     else if (playerScore == 2) {
-        remark = "Average Grades, You can do better."
+        remark = "Make sure to mark that you're mid today! You cannot contact us yet."
         //remarkColor = "orange"
     }
     else if (playerScore >= 3) {
-        remark = "Excellent, Keep the good work going."
+        remark = "Good enough. But if you know so much, why are you here?"
+        document.getElementById('whylink').style.visibility = 'visible';
         //remarkColor = "green"
     }
     const playerGrade = (playerScore / 3) * 100;
@@ -196,7 +198,10 @@ function handleEndGame() {
     document.getElementById('grade-percentage').innerHTML = playerGrade;
     document.getElementById('wrong-answers').innerHTML = wrongAttempt;
     document.getElementById('right-answers').innerHTML = playerScore;
+    
     document.getElementById('score-modal').style.display = "flex";
+
+
 
 }
 
