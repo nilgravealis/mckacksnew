@@ -353,7 +353,7 @@ function handleEndGame() {
         remark = "Average Grades, You can do better."
         remarkColor = "orange"
     }
-    else if (playerScore >= 7) {
+    else if (playerScore == 10) {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
