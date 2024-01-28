@@ -101,11 +101,10 @@
 
 
 
-<script id="formSubmission">
+<script>
 
-	localStorage.clear();
-
-	// this part of the script stops the user from being able to be happy
+	//this script handles the input from the symptoms form
+	
 	const symptom1 = document.getElementById("symptom1");
 	const symptom2 = document.getElementById("symptom2");
 	const symptom3 = document.getElementById("symptom3");
@@ -113,6 +112,7 @@
 	const symptom5 = document.getElementById("symptom5");
 	const symptom6 = document.getElementById("symptom6");
 
+	// this part of the script stops the user from being able to be happy
 	symptom3.addEventListener("change", () => {
 		if (symptom3.checked){
 			alert("Our medical team cannot help you if you are unwilling to help yourself. Please answer honestly.");
@@ -120,7 +120,8 @@
 		}
 	})
 
-	function store(){
+	function store(){ //called when the sussify button is pressed
+
 		 var table = document.getElementById("myTable");
 		 //make the new row
 		 var row = table.insertRow(-1);
@@ -163,14 +164,14 @@
 
 		 //save the table
 		 if (typeof(Storage) !== "undefined") {
-			if (localStorage.rowsCount) {
-			localStorage.rowsCount = Number(localStorage.rowsCount)+1;
+			if (sessionStorage.rowsCount) {
+			sessionStorage.rowsCount = Number(sessionStorage.rowsCount)+1;
 			} 
 			else {
-			localStorage.rowsCount = 1;
+			sessionStorage.rowsCount = 1;
 			}
-			if (localStorage.rowsCount > 10){
-				document.getElementById("result").innerHTML = "You have logged symptoms " + localStorage.rowsCount + " times. That's WAY too much. Our medical team is busy with people who have it worse than you. You should be ashamed.";
+			if (sessionStorage.rowsCount > 10){
+				document.getElementById("result").innerHTML = "You have logged symptoms " + sessionStorage.rowsCount + " times. That's WAY too much. Our medical team is busy with people who have it worse than you. You should be ashamed.";
 				document.getElementById("sussify").style.visibility = 'hidden';
 				document.getElementById("navToTreatments").style.visibility = 'visible';
 			}
