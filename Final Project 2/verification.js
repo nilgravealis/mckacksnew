@@ -1,6 +1,5 @@
 const questions = [
 
-
     {
         question: "Suppose that in a mammalian species, the allele for black hair (B) is dominant to the allele for brown hair (b), and the allele for curly hair (C) is dominant to the allele for straight hair (c). When an organism of unknown genotype is crossed against one with straight, brown hair, the phenotypic ratio is as follows: 25% curly black hair, 25% straight black hair, 25% curly brown hair, 25% straight brown hair. What is the genotype of the parent?",
         optionA: "BbCC",
@@ -53,7 +52,7 @@ const questions = [
         optionC: "32",
         optionD: "36",
         correctOption: "optionC"
-    }
+    },
 
 ]
 
@@ -62,12 +61,13 @@ let shuffledQuestions = [] //empty array to hold shuffled selected questions
 
 function handleQuestions() { 
     //function to shuffle and push 10 questions to shuffledQuestions array
-    while (shuffledQuestions.length <= 3) {
+    while (shuffledQuestions.length <= 2) {
         const random = questions[Math.floor(Math.random() * questions.length)]
         if (!shuffledQuestions.includes(random)) {
             shuffledQuestions.push(random)
         }
     }
+
 }
 
 
@@ -139,15 +139,15 @@ function checkForAnswer() {
 
 //called when the next button is called
 function handleNextQuestion() {
-    checkForAnswer()
-    unCheckRadioButtons()
+    checkForAnswer();
+    unCheckRadioButtons();
     //delays next question displaying for a second
     setTimeout(() => {
-        if (indexNumber <= 2) {
+        if (indexNumber < 3) {
             NextQuestion(indexNumber)
         }
         else {
-            handleEndGame()
+            handleEndGame();
         }
         resetOptionBackground()
     }, 1000);
@@ -171,30 +171,37 @@ function unCheckRadioButtons() {
 
 // function for when all questions being answered
 function handleEndGame() {
+    
     let remark = null
-    let remarkColor = null
+    document.getElementById('whylink').style.visibility = 'hidden';
+    //let remarkColor = "bad";
 
     // condition check for player remark and remark color
+    //debugging: player score cases are working and remark assignment is working
     if (playerScore <= 1) {
-        remark = "Bad Grades, Keep Practicing."
-        remarkColor = "red"
+        remark = "Make sure to mark that you're delusional today! You cannot contact us yet."
+        //remarkColor = "red"
     }
     else if (playerScore == 2) {
-        remark = "Average Grades, You can do better."
-        remarkColor = "orange"
+        remark = "Make sure to mark that you're mid today! You cannot contact us yet."
+        //remarkColor = "orange"
     }
     else if (playerScore >= 3) {
-        remark = "Excellent, Keep the good work going."
-        remarkColor = "green"
+        remark = "Good enough. But if you know so much, why are you here?"
+        document.getElementById('whylink').style.visibility = 'visible';
+        //remarkColor = "green"
     }
-
+    const playerGrade = (playerScore / 3) * 100;
     //data to display to score board
-    document.getElementById('remarks').innerHTML = remark
-    document.getElementById('remarks').style.color = remarkColor
-    document.getElementById('grade-percentage').innerHTML = playerGrade
-    document.getElementById('wrong-answers').innerHTML = wrongAttempt
-    document.getElementById('right-answers').innerHTML = playerScore
-    document.getElementById('score-modal').style.display = "flex"
+    document.getElementById("remarks").innerHTML = remark;
+    document.getElementById('remarks').style.color = 'green'; 
+    document.getElementById('grade-percentage').innerHTML = playerGrade;
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt;
+    document.getElementById('right-answers').innerHTML = playerScore;
+    
+    document.getElementById('score-modal').style.display = "flex";
+
+
 
 }
 
