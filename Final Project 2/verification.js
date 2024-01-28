@@ -54,6 +54,42 @@ const questions = [
         correctOption: "optionC"
     },
 
+    {
+        question: "A drug is used that prevents the conversion of angiotensin I to angiotensin II. What is a likely effect of this drug?",
+        optionA: "Increased sodium reabsorbtion",
+        optionB: "Increase potassium reabsorbtion",
+        optionC: "Increased blood pressure",
+        optionD: "Increased blood pH",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "C6H12O6 + O2 -> CO2 + H2O happens where?",
+        optionA: "in the cytoplasm",
+        optionB: "in the area of the cell membrane",
+        optionC: "in the mitochondria",
+        optionD: "in the area around the ribosomes",
+        correctOption: "optionC"
+    },
+
+    {
+        question: "How many different types of gametes would be produced by an organism of genotype AabbCcDdEE, if all of the genes assort independently?",
+        optionA: "6",
+        optionB: "8",
+        optionC: "10",
+        optionD: "16",
+        correctOption: "optionB"
+    },
+
+    {
+        question: "How many structural isomers of C3H6Br2 are capable of exhibiting optical activity?",
+        optionA: "0",
+        optionB: "1",
+        optionC: "2",
+        optionD: "3",
+        correctOption: "optionB"
+    },
+
 ]
 
 
