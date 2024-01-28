@@ -16,8 +16,13 @@
 	}
 	
 	tr:nth-child(even) {
-	  background-color: #92C7CF;
+	  background-color: #AAD7D9;
 	}
+
+	tr:nth-child(odd){
+		background-color: #92C7CF;
+	}
+
 	</style>
 <body>
 	<font face="seravek">
@@ -40,7 +45,7 @@
 
 <div id="result">
 	<center>
-	Why haven't you been tracking your data? This is why you're so unhealthy.
+	Why haven't you been tracking your data? This is why you're so unhealthy. You just don't care.
 </center>
 </div>
 
@@ -121,11 +126,29 @@
 		 var date = new Date();
 		 dayCell.innerHTML = date;
 		 s1.innerHTML = Boolean(symptom1.checked);
+		 if (symptom1.checked){
+			s1.style.backgroundColor = '#FBF9F1';
+		 }
 		 s2.innerHTML = Boolean(symptom2.checked);
+		 if (symptom2.checked){
+			s2.style.backgroundColor = '#FBF9F1';
+		 }
 		 s3.innerHTML = Boolean(symptom3.checked);
+		 if (symptom3.checked){
+			s3.style.backgroundColor = '#FBF9F1';
+		 }
 		 s4.innerHTML = Boolean(symptom4.checked);
+		 if (symptom4.checked){
+			s4.style.backgroundColor = '#FBF9F1';
+		 }
 		 s5.innerHTML = Boolean(symptom5.checked);
+		 if (symptom5.checked){
+			s5.style.backgroundColor = '#FBF9F1';
+		 }
 		 s6.innerHTML = Boolean(symptom6.checked);
+		 if (symptom6.checked){
+			s6.style.backgroundColor = '#FBF9F1';
+		 }
 
 		 //save the table
 		 if (typeof(Storage) !== "undefined") {
