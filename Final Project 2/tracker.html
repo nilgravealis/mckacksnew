@@ -1,0 +1,124 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="layout.css">
+	<title>TRACKER</title>
+</head>
+<body>
+	<font face="seravek">
+
+<a href="default.html">
+	<header>
+	</header>
+</a>
+
+<nav>
+	<center>
+		<ul>
+			<li><a href="default.html">HOME</a>
+			<li><a class="active" href="tracker.html">TRACKER</a>
+			<li><a href="sources.html">SOURCES</a>
+			<li><a href="message.html">MESSAGE ME</a>
+		</ul>
+	</center>
+</nav>
+
+<form id="myform">
+	<center>
+		<input type="checkbox" id="symptom1" name="symptom1" value="Mid">
+		<label for="symptom1"> I am feeling generally mid today.</label><br>
+		<input type="checkbox" id="symptom2" name="symptom2" value="Hair">
+		<label for="symptom2"> My hair follicles hurt today.</label><br>
+		<input type="checkbox" id="symptom3" name="symptom3" value="Happiness">
+		<label for="symptom3"> I felt happy today, and used my time to the fullest.</label><br>
+		<br>
+	</center>
+</form>
+<center>
+	<button onclick="store()" type="button">Systematically Understand Symptoms</button>
+</center>
+<center>
+<table id="myTable">
+	<tr>
+		<tr>Date</th>
+		<th>Symptom1</th>
+		<th>Symptom2</th>
+		<th>Symptom3</th>
+	</tr>
+	<tr>
+		<td>Today</td>
+		<td>Yes</td>
+		<td>No</td>
+		<td>No</td>
+	</tr>
+</table>
+</center>
+<script id="formSubmission">
+
+	// this part of the script stops the user from being able to be happy
+	const symptom3 = document.getElementById("symptom3");
+	symptom3.addEventListener("change", () => {
+		if (symptom3.checked){
+			alert("Our medical team cannot help you if you are unwilling to help yourself. Please answer honestly.");
+			symptom3.checked = false;
+		}
+	})
+
+	function store(){
+		 var table = document.getElementById("myTable");
+		 //make the new row
+		 var row = table.insertRow(-1);
+		 //add the new cells to the row
+		 var dayCell = row.insertCell(0);
+		 var s1 = row.insertCell(1);
+		 var s2 = row.insertCell(2);
+		 var s3 = row.insertCell(3);
+		 //add the appropriate values to the cell
+		 var date = new Date();
+		 dayCell.innerHTML = date.getFullYear();
+		 //save the table
+		 
+		 
+	}
+
+	var symptoms = [];
+/*
+	function createTable(tableData) {
+		var table = document.createElement('table');
+		var tableBody = document.createElement('tbody');
+
+		tableData.forEach(function(rowData) {
+			var row = document.createElement('tr');
+
+			rowData.forEach(function(cellData) {
+				var cell = document.createElement('td');
+				cell.appendChild(document.createTextNode(cellData));
+				row.appendChild(cell);
+			});
+
+			tableBody.appendChild(row);
+		})
+
+		table.appendChild(tableBody);
+		document.body.appendChild(table);
+	}
+
+
+
+	const submitted = document.getElementById("submit");
+	submitted.addEventListener("change", () => {
+		const d = new Date();
+		const date = d.getMinutes();
+
+		let length = symptoms.push([])
+		symptoms[length].push(date);
+		var symptoms_checked = document.getElementByID("myform").elements;
+		for (var i=0; element; element = elements[i++]){
+			symptoms[length].push(element.checked);
+		}
+		createTable([["row 1, cell 1", "row 1, cell 2"], ["row 2, cell 1", "row 2, cell 2"]]);
+	})*/
+</script>
+
+</font>
+</body>
+</html>
