@@ -61,7 +61,7 @@ main{
 .game-quiz-container{
     width: 40rem;
     height: 30rem;
-    background-color: lightgray;
+    background-color: #AAD7D9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,6 +73,7 @@ main{
     width: 80%;
     height: 4rem;
     display: flex;
+    color: #004060;
     justify-content: space-around;
     align-items: center;
 }
@@ -94,6 +95,7 @@ main{
 .game-question-container h1{
     font-size: 1.1rem;
     text-align: center;
+    color: #004060;
     padding: 3px;
 }
 
@@ -122,14 +124,14 @@ span label{
     cursor: pointer;
     transition: transform 0.3s;
     font-weight: 600;
-    color: rgb(22, 22, 22);
+    color: #004060;
 }
 
 span label:hover{
     -ms-transform: scale(1.12);
     -webkit-transform: scale(1.12);
     transform: scale(1.12);
-    color: white;
+    color: #fbf9f1;
 }
 
 input[type="radio"] {
@@ -139,7 +141,7 @@ input[type="radio"] {
 
 
 input[type=radio]:checked ~ .option {
-	background: paleturquoise;
+	background: #92C7CF;
 }
 
 .next-button-container{
@@ -153,14 +155,14 @@ input[type=radio]:checked ~ .option {
     height: 2rem;
     border-radius: 10px;
     background: none;
-    color: rgb(25, 25, 25);
+    color: #004060;
     font-weight: 600;
-    border: 2px solid gray;
+    border: 2px solid #92C7CF;
     cursor: pointer;
     outline: none;
 }
 .next-button-container button:hover{
-    background-color: rgb(143, 93, 93);
+    background-color: #92C7CF;
 }
 
 .modal-container{
@@ -172,8 +174,8 @@ input[type=radio]:checked ~ .option {
     width: 100%; 
     height: 100%; 
     overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: #92C7CF; 
+    background-color: #92C7CF;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
@@ -184,7 +186,7 @@ input[type=radio]:checked ~ .option {
 .modal-content-container{
     height: 20rem;
     width: 25rem;
-    background-color: rgb(43, 42, 42);
+    background-color: #92C7CF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,7 +197,7 @@ input[type=radio]:checked ~ .option {
 .modal-content-container h1{
     font-size: 1.3rem;
     height: 3rem;
-    color: lightgray;
+    color: #004060;
     text-align: center;
 }
 
@@ -233,7 +235,7 @@ input[type=radio]:checked ~ .option {
     border-radius: 20px;
 }
 .modal-button-container button:hover{
-    background-color: rgb(83, 82, 82);
+    background-color: #92C7CF;
 }
 
 footer {
